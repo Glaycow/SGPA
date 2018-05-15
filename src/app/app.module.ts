@@ -8,18 +8,31 @@ import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClarityModule } from '@clr/angular';
+import { LoginComponent } from './acesso/login/login.component';
+import { CriarContaComponent } from './acesso/criar-conta/criar-conta.component';
+import { AcessoComponent } from './acesso/acesso.component';
+import {CommonModule} from '@angular/common';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {DashboardModule} from './dashboard/dashboard.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    CriarContaComponent,
+    AcessoComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    NgbModule.forRoot(),
-    BrowserAnimationsModule,
-    ClarityModule
+      BrowserModule,
+      CommonModule,
+      ReactiveFormsModule,
+      FormsModule,
+      BrowserAnimationsModule,
+      AppRoutingModule,
+      NgbModule.forRoot(),
+      ClarityModule,
+      DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
